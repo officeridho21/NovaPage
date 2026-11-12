@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b4a86"/>
+      <stop offset=".45" stop-color="#5d83b6"/>
+      <stop offset=".62" stop-color="#9db6cd"/>
+      <stop offset="1" stop-color="#3b5d82"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd089"/>
+      <stop offset=".55" stop-color="#f3a04a"/>
+      <stop offset="1" stop-color="#b86a2c"/>
+    </linearGradient>
+    <linearGradient id="glassSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffcf86" stop-opacity=".0"/>
+      <stop offset=".5" stop-color="#ffe3b0" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#ffcf86" stop-opacity=".0"/>
+    </linearGradient>
+    <linearGradient id="roof" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1b2b4d"/>
+      <stop offset="1" stop-color="#34507c"/>
+    </linearGradient>
+    <linearGradient id="roofTop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6c8bb7"/>
+      <stop offset="1" stop-color="#a9c0dc"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a5878"/>
+      <stop offset="1" stop-color="#14263f"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="reflectMask"><rect x="0" y="590" width="1600" height="310" fill="url(#fade)"/></mask>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffb35c" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ffb35c" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blurS"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="blurM"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="blurL"><feGaussianBlur stdDeviation="40"/></filter>
+
+    <g id="building">
+      <!-- glass volume -->
+      <polygon points="410,402 1010,282 1010,590 410,590" fill="url(#glass)"/>
+      <rect x="410" y="402" width="600" height="188" fill="url(#glassSide)" opacity=".6"/>
+      <!-- mullions -->
+      <g stroke="#3a2412" stroke-opacity=".55" stroke-width="3">
+        <line x1="410" y1="402" x2="410" y2="590"/><line x1="470" y1="390" x2="470" y2="590"/>
+        <line x1="530" y1="378" x2="530" y2="590"/><line x1="590" y1="366" x2="590" y2="590"/>
+        <line x1="650" y1="354" x2="650" y2="590"/><line x1="710" y1="342" x2="710" y2="590"/>
+        <line x1="770" y1="330" x2="770" y2="590"/><line x1="830" y1="318" x2="830" y2="590"/>
+        <line x1="890" y1="306" x2="890" y2="590"/><line x1="950" y1="294" x2="950" y2="590"/>
+        <line x1="1010" y1="282" x2="1010" y2="590"/>
+      </g>
+      <!-- interior lines -->
+      <rect x="410" y="498" width="600" height="3" fill="#3a2412" opacity=".35"/>
+      <g fill="#7a3f12" opacity=".35">
+        <rect x="520" y="470" width="14" height="120"/><rect x="760" y="440" width="10" height="150"/>
+        <rect x="900" y="430" width="18" height="160"/>
+      </g>
+      <!-- roof slab -->
+      <polygon points="280,408 1130,238 1130,266 280,438" fill="url(#roof)"/>
+      <polygon points="280,408 1130,238 1100,226 330,380" fill="url(#roofTop)" opacity=".85"/>
+      <polygon points="280,438 1130,266 1130,274 280,448" fill="#0d1830"/>
+      <!-- base platform -->
+      <rect x="360" y="590" width="720" height="22" fill="#10203a"/>
+      <rect x="360" y="590" width="720" height="3" fill="#6f8db3" opacity=".6"/>
+      <!-- people -->
+      <g fill="#0b1426">
+        <ellipse cx="868" cy="548" rx="7" ry="8"/><rect x="861" y="555" width="14" height="36" rx="6"/>
+        <ellipse cx="930" cy="552" rx="6" ry="7"/><rect x="924" y="558" width="12" height="33" rx="5"/>
+        <ellipse cx="962" cy="552" rx="6" ry="7"/><rect x="956" y="558" width="12" height="33" rx="5"/>
+        <ellipse cx="600" cy="560" rx="6" ry="7"/><rect x="594" y="566" width="12" height="25" rx="5"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <ellipse cx="760" cy="520" rx="760" ry="160" fill="#d7e3ee" opacity=".45" filter="url(#blurL)"/>
+
+  <!-- distant hills -->
+  <path d="M0 520 C180 440 300 470 430 500 C560 470 700 520 860 505 C1040 470 1200 500 1380 470 C1480 455 1560 470 1600 480 L1600 640 L0 640Z" fill="#6d89aa" opacity=".55" filter="url(#blurS)"/>
+  <path d="M0 560 C220 500 420 540 640 550 C900 520 1200 560 1600 520 L1600 660 L0 660Z" fill="#4a6685" opacity=".75"/>
+
+  <!-- pine trees left -->
+  <g fill="#122a38">
+    <polygon points="30,640 80,200 130,640"/><polygon points="90,640 150,300 210,640"/>
+    <polygon points="-10,640 40,330 90,640"/>
+  </g>
+  <g fill="#18354a" opacity=".85">
+    <polygon points="170,640 215,380 260,640"/><polygon points="220,640 262,430 304,640"/>
+  </g>
+  <rect x="0" y="260" width="360" height="420" fill="#8fa9c4" opacity=".28" filter="url(#blurM)"/>
+  <!-- right trees -->
+  <g fill="#17303f" opacity=".9">
+    <polygon points="1440,640 1500,300 1560,640"/><polygon points="1510,640 1570,360 1630,640"/>
+  </g>
+
+  <!-- glow behind building -->
+  <ellipse cx="730" cy="470" rx="520" ry="150" fill="url(#glow)" filter="url(#blurM)"/>
+
+  <!-- ground -->
+  <rect x="0" y="612" width="1600" height="288" fill="url(#water)"/>
+  <!-- grass edges -->
+  <path d="M0 612 L360 612 L330 650 L0 700Z" fill="#14283a"/>
+  <path d="M1080 612 L1600 612 L1600 690 L1180 650Z" fill="#14283a"/>
+
+  <!-- reflection -->
+  <g mask="url(#reflectMask)" opacity=".8">
+    <g transform="translate(0 1224) scale(1 -1)" filter="url(#blurS)">
+      <use href="#building"/>
+    </g>
+  </g>
+  <!-- ripple lines -->
+  <g stroke="#bcd1e6" stroke-opacity=".16" stroke-width="2">
+    <line x1="420" y1="660" x2="1020" y2="660"/><line x1="470" y1="700" x2="980" y2="700"/>
+    <line x1="520" y1="745" x2="930" y2="745"/><line x1="580" y1="800" x2="880" y2="800"/>
+  </g>
+
+  <!-- building -->
+  <use href="#building"/>
+
+  <!-- foreground path (left) -->
+  <path d="M0 690 L420 640 L560 660 L0 790Z" fill="#0e1e33" opacity=".85"/>
+  <path d="M0 690 L420 640" stroke="#7e9bbd" stroke-opacity=".4" stroke-width="3"/>
+
+  <!-- haze -->
+  <rect y="560" width="1600" height="120" fill="#b8cbe0" opacity=".22" filter="url(#blurM)"/>
+  <rect width="1600" height="900" fill="#0a1a44" opacity=".18"/>
+</svg>
